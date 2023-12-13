@@ -1,0 +1,17 @@
+<!--
+!
+!   System              : Genesis Business Library
+!   Sub-System          : multi-pro-code-test Configuration
+!   Version             : 1.0
+!   Copyright           : (c) Genesis
+!   Date                : 2022-03-18
+!   Function : Provide Service Definitions Config for multi-pro-code-test.
+!
+!   Modification History
+!
+-->
+<configuration>
+    <service host="localhost" name="COPES_REQUEST_SERVER" port="11001"/>
+    <service host="localhost" name="COPES_DATASERVER" port="11002"/>
+    <service host="localhost" name="COPES_EVENT_HANDLER" port="11003"/>
+</configuration>

@@ -1,0 +1,26 @@
+{
+  "appName": "copes",
+  "pkgName": "copes",
+  "directory": "copes",
+  "appSeed": {
+    "type": "remote",
+    "about": "Genesis Blank App Seed",
+    "remoteUser": "genesiscommunitysuccess",
+    "remoteRepo": "blank-app-seed",
+    "remoteBranch": "main",
+    "subdir": ""
+  },
+  "apiHost": "ws://localhost/gwf/",
+  "enableSSO": false,
+  "groupId": "global.genesis",
+  "applicationVersion": "1.0.0-SNAPSHOT",
+  "rootElement": "copes-root",
+  "localGenId": "COPES",
+  "applicationVersionWeb": "1.0.0",
+  "versions": {
+    "UI": "14.115.1",
+    "GSF": "7.0.2",
+    "Auth": "7.0.1"
+  },
+  "useDocker": false
+}
