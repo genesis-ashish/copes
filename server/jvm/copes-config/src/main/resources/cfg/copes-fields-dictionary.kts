@@ -27,5 +27,13 @@ fields {
     field(name="TEMPLATE_VERSION", type=STRING)
     field(name="TEMPLATE_ROUTE_NAME", type=STRING)
 
+    field(name="WORKFLOW_ID", type=STRING)
+    field(name="WORKFLOW_NAME", type=STRING)
+    field(name="WORKFLOW_DATE_CREATED", type=DATE)
+    field(name="WORKFLOW_CREATED_BY", type=STRING)
 
+    field(name="WORKFLOW_STEP_ID", type=STRING)
+    field(name="WORKFLOW_STEP_NAME", type=STRING)
+    field(name="WORKFLOW_STEP_TEXT", type=STRING)
+    field(name="WORKFLOW_STEP_REQUIRES_APPROVAL", type=BOOLEAN)
 }

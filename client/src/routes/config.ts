@@ -16,6 +16,7 @@ import { Route, RouterConfiguration } from '@microsoft/fast-router';
 import { defaultLayout, loginLayout } from '../layouts';
 import { Home } from './home/home';
 import { NotFound } from './not-found/not-found';
+import {Workflow} from "./workflow/workflow";
 
 // eslint-disable-next-line
 declare var ENABLE_SSO: string;
@@ -77,7 +78,8 @@ export class MainRouterConfig extends RouterConfiguration<LoginSettings> {
         settings: { public: true },
         childRouters: true,
       },
-      { path: 'home', element: Home, title: 'Home', name: 'home' },
+        { path: 'home', element: Home, title: 'Home', name: 'home' },
+        { path: 'workflow/{workflowId}', element: Workflow, title: 'Workflow', name: 'workflow' },
       { path: 'not-found', element: NotFound, title: 'Not Found', name: 'not-found' }
     );
 

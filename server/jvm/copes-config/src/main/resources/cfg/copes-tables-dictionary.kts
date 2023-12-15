@@ -37,4 +37,27 @@ tables {
         }
     }
 
+    table(name="WORKFLOW", id = 2003) {
+        sequence(WORKFLOW_ID, "WF")
+        WORKFLOW_NAME not null
+        WORKFLOW_DATE_CREATED
+        WORKFLOW_CREATED_BY
+
+        primaryKey {
+            WORKFLOW_ID
+        }
+    }
+
+    table(name="WORKFLOW_STEP", id  = 2004) {
+        sequence(WORKFLOW_STEP_ID, "WS")
+        WORKFLOW_STEP_TEXT not null
+        WORKFLOW_STEP_NAME not null
+        WORKFLOW_STEP_REQUIRES_APPROVAL
+        WORKFLOW_ID not null
+
+        primaryKey {
+            WORKFLOW_STEP_ID
+        }
+    }
+
 }

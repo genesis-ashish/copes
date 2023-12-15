@@ -5,9 +5,11 @@ import { g2plotChartsComponents } from '@genesislcap/g2plot-chart';
 import { logger } from '../utils';
 import { Form } from '@genesislcap/foundation-forms';
 import { foundationLayoutComponents } from '@genesislcap/foundation-layout';
+import {WorkflowStepRenderer} from "./workflow-step";
 
 EntityManagement;
 Form;
+WorkflowStepRenderer;
 
 enum ResourceType {
   LOCAL = 'LOCAL',
