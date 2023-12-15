@@ -8,6 +8,14 @@ export const workflowStyles = css`
       width: 100%;
       flex-direction: column;
     }
+
+      .loading-spinner-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+  
   
     h1 {
       padding: 20px;

@@ -2,6 +2,7 @@ import {customElement, FASTElement, observable} from '@microsoft/fast-element';
 import { workflowTemplate as template } from './workflow.template';
 import { workflowStyles as styles } from './workflow.styles';
 import {Connect} from "@genesislcap/foundation-comms";
+import {Route} from "@microsoft/fast-router";
 
 export interface WorkflowStep {
     copyText: string;
@@ -17,11 +18,13 @@ export interface WorkflowStep {
 })
 export class Workflow extends FASTElement {
 
-    @observable loading: boolean;
-
     @observable workflowSteps: WorkflowStep[];
 
     @observable workflowName: string;
+
+    @observable submitted: boolean;
+
+    @observable loaded: boolean;
 
     workflowId: string;
 
@@ -34,23 +37,34 @@ export class Workflow extends FASTElement {
             { CRITERIA_MATCH: `WORKFLOW_ID == "${this.workflowId}"` }
 
         );
-
-
         this.workflowSteps = this.createWorkflowSteps(data.ROW);
         this.workflowName = this.getWorkflowName(data.ROW);
+        this.loaded = true;
+    }
+
+    submitWorkflow(): void {
+        this.submitted = true;
+    }
+
+    goHome(): void {
+        Route.path.push(`/home`);
+    }
+
+    handleApprovedChanged(): void {
+        this.workflowSteps = [...this.workflowSteps];
     }
 
     private createWorkflowSteps(rowData: any[]): WorkflowStep[] {
 
         if (!rowData) {
-            return [];
+            return null;
         }
 
         return rowData.map(r => ({
             copyText: r.WORKFLOW_STEP_NAME,
             name: r.WORKFLOW_STEP_TEXT,
             approvalRequired: r.WORKFLOW_STEP_REQUIRES_APPROVAL,
-            approved: true
+            approved: false
         }))
     }
 
@@ -61,10 +75,4 @@ export class Workflow extends FASTElement {
         }
         return rowData[0].WORKFLOW_NAME;
     }
-
-    onApprovedChange(element) {
-        debugger;
-        console.log(element);
-    }
-
 }

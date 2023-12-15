@@ -14,7 +14,7 @@ export const workflowColumns = [
         cellRenderer: GridProRendererTypes.action,
         cellRendererParams: {
             actionClick: (rowData) => {
-                Route.path.push(`workflow/${rowData.WORKFLOW_ID}`);
+                Route.path.push(`/workflow/${rowData.WORKFLOW_ID}`);
             },
             actionName: 'View workflow',
             appearance: 'secondary-orange',
@@ -50,7 +50,7 @@ export const HomeTemplate = html<Home>`
                               createEvent="EVENT_WORKFLOW_INSERT"
                               updateEvent="EVENT_WORKFLOW_UPDATE"
                               deleteEvent="EVENT_WORKFLOW_DELETE"
-                              :columns=${x => workflowColumns}
+                              :columns=${() => workflowColumns}
                       ></entity-management>
                   </zero-layout-item>
                   <zero-layout-item title="Workflow steps" size="40%">
