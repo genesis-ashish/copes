@@ -5,6 +5,8 @@ import { g2plotChartsComponents } from '@genesislcap/g2plot-chart';
 import { logger } from '../utils';
 import { Form } from '@genesislcap/foundation-forms';
 import { foundationLayoutComponents } from '@genesislcap/foundation-layout';
+import { zeroFileUpload } from "@genesislcap/foundation-zero";
+import {FileUpload} from "./file-upload/file-upload";
 
 EntityManagement;
 Form;
@@ -49,7 +51,8 @@ export async function loadRemotes() {
       baseComponents,
       zeroGridComponents,
       g2plotChartsComponents,
-      foundationLayoutComponents
+      foundationLayoutComponents,
+        FileUpload
     ),
   };
 }
