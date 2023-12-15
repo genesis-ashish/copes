@@ -7,9 +7,11 @@ import { Form } from '@genesislcap/foundation-forms';
 import { foundationLayoutComponents } from '@genesislcap/foundation-layout';
 import { zeroFileUpload } from "@genesislcap/foundation-zero";
 import {FileUpload} from "./file-upload/file-upload";
+import {WorkflowStepRenderer} from "./workflow-step";
 
 EntityManagement;
 Form;
+WorkflowStepRenderer;
 
 enum ResourceType {
   LOCAL = 'LOCAL',

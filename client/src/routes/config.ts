@@ -17,6 +17,7 @@ import { defaultLayout, loginLayout } from '../layouts';
 import { Home } from './home/home';
 import { NotFound } from './not-found/not-found';
 import {Reconciler} from "./reconciler/reconciler";
+import {Workflow} from "./workflow/workflow";
 
 // eslint-disable-next-line
 declare var ENABLE_SSO: string;
@@ -83,6 +84,7 @@ export class MainRouterConfig extends RouterConfiguration<LoginSettings> {
       },
       { path: 'home', element: Home, title: 'Home', name: 'home' },
       { path: 'reconciler', element: Reconciler, title: 'Reconciler', name: 'reconciler' },
+        { path: 'workflow/{workflowId}', element: Workflow, title: 'Workflow', name: 'workflow' },
       { path: 'not-found', element: NotFound, title: 'Not Found', name: 'not-found' }
     );
 
